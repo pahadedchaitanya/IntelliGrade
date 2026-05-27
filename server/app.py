@@ -9,7 +9,11 @@ app = Flask(__name__)
 CORS(app)
 
 model = joblib.load("final_model.pkl")
+@app.route("/")
 
+def home():
+
+    return "IntelliGrade Backend Running Successfully 🚀"
 @app.route("/predict", methods=["POST"])
 
 def predict():
